@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101522">
+  <title>Cube Maze — acubemy plugin</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/gh/acubemy/plugin-sdk@1/v1.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div><div class="eyebrow">SMART CUBE ADVENTURE</div><h1>CUBE <span>MAZE</span></h1></div>
+      <div class="connection" id="connection"><i></i><span>Cube simulator ready</span></div>
+    </header>
+    <section class="intro" id="intro">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">TURN YOUR CUBE. FIND YOUR WAY.</div>
+          <h2>A little twist.<br><em>A clever escape.</em></h2>
+          <p>Navigate twisting mazes, collect keys, unlock doors and reach the portal. Every move comes from your real cube.</p>
+          <div class="legend"><span>🟡 KEY</span><span>🔒 LOCKED GATE</span><span>🌀 EXIT</span></div>
+        </div>
+        <div class="hero-cube" aria-hidden="true"><div class="tile a"></div><div class="tile b"></div><div class="tile c"></div><div class="tile d"></div><div class="tile e"></div><div class="tile f"></div><div class="tile g"></div><div class="tile h"></div><div class="tile i"></div></div>
+      </div>
+      <div class="level-grid" id="levels"></div>
+      <div class="how">
+        <div><b>U</b><span>UP</span></div><div><b>R</b><span>RIGHT</span></div><div><b>D</b><span>DOWN</span></div><div><b>L</b><span>LEFT</span></div><div><b>F</b><span>FLIP SWITCH</span></div><div><b>B</b><span>UNDO</span></div>
+      </div>
+      <p class="footnote">Desktop test: press U R D L F B on your keyboard. Hold Shift for prime turns.</p>
+    </section>
+    <section class="game hidden" id="game">
+      <div class="gamebar">
+        <button class="back" id="back">← LEVELS</button>
+        <div class="levelname"><span id="level-label">LEVEL 01</span><b id="level-title">The First Turn</b></div>
+        <div class="stats"><span>STEPS <b id="steps">0</b></span><span>KEYS <b id="keys">0/0</b></span></div>
+      </div>
+      <div class="board-wrap">
+        <div class="board" id="board" aria-label="Maze board"></div>
+        <aside class="side">
+          <div class="objective"><div class="eyebrow">MISSION</div><h3 id="objective">Find the exit</h3><p id="hint">Collect the key to open the gate.</p></div>
+          <div class="switch-card"><div class="eyebrow">SWITCH</div><div class="switch-state" id="switch-state">OFF</div><p>Turn the front face to toggle special tiles.</p></div>
+          <div class="last"><div class="eyebrow">LAST TURN</div><strong id="last-turn">—</strong></div>
+          <button class="reset" id="reset">↻ RESTART LEVEL</button>
+        </aside>
+      </div>
+      <div class="mobile-controls" aria-label="Touch controls">
+        <button data-move="U">↑</button><div><button data-move="L">←</button><button data-move="D">↓</button><button data-move="R">→</button></div><button data-move="F">✦ SWITCH</button>
+      </div>
+      <p class="help">U ↑ &nbsp; R → &nbsp; D ↓ &nbsp; L ← &nbsp; F switch &nbsp; B undo</p>
+    </section>
+    <section class="win hidden" id="win">
+      <div class="win-mark">✦</div><div class="eyebrow">MAZE CLEARED</div><h2 id="win-title">Brilliant escape!</h2><p id="win-copy">You found your way out.</p>
+      <div class="win-actions"><button class="primary" id="next">NEXT LEVEL →</button><button class="secondary" id="levels-back">LEVEL SELECT</button></div>
+    </section>
+    <div class="toast" id="toast" role="status"></div>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

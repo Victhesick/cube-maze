@@ -1,0 +1,11 @@
+{
+  "name": "Cube Maze",
+  "description": "A smart-cube maze adventure with keys, gates, switches and six puzzle levels.",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "permissions": [
+    "moves",
+    "state"
+  ],
+  "id": "cube-maze"
+}
